@@ -5,24 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Underdog&family=Young+Serif&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Recipe page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <div class="container">
     <div class="recipe-image">
-      <img src="./assets/images/image-omelette.jpeg" alt="A delicious omelette" class="recipe-image" width="600">
+      <img src="./assets/images/image-omelette.jpeg" alt="A delicious omelette" class="recipe-image" width="750">
     </div>
     
     <div class="recipe-header">
       <h1 class="header-title" >Simple Omelette Recipe</h1>
-      <p>
+      <p class="header-description">
         An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
         to perfection, optionally filled with your choice of cheese, vegetables, or meats.
       </p>
@@ -30,16 +26,16 @@
 
     <div class="recipe-preparation">
         <h3 class="preparation-title">Preparation time</h3>
-        <ul>
-          <li>Total: Approximately 10 minutes</li>
-          <li>Preparation: 5 minutes</li>
-          <li>Cooking: 5 minutes</li>
+        <ul class="preparation-list">
+          <li><strong>Total</strong>: Approximately 10 minutes</li>
+          <li><strong>Preparation</strong>: 5 minutes</li>
+          <li><strong>Cooking</strong>: 5 minutes</li>
         </ul>
     </div>
 
     <div class="recipe-ingredients">
-      <h2>Ingredients</h2>
-      <ul>
+      <h2 class="ingredients-title">Ingredients</h2>
+      <ul class="ingredients-list">
         <li>2-3 large eggs</li>
         <li>Salt, to taste</li>
         <li>Pepper, to taste</li>
@@ -49,24 +45,20 @@
     </div>
 
     <div class="recipe-instructions">
-      <h2>Instructions</h2>
-      <ol>        
-        <li>Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
-            You can add a tablespoon of water or milk for a fluffier texture.</li>
+      <h2 class="instructions-title">Instructions</h2>
+      <ol class="instructions-list">        
+        <li>Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</li>
         <li>Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil.</li>
-        <li>Cook the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
-            the eggs evenly coat the surface.</li>
-        <li>Add fillings (optional): When the eggs begin to set at the edges but are still slightly runny in the 
-            middle, sprinkle your chosen fillings over one half of the omelette.</li>
-        <li>Fold and serve: As the omelette continues to cook, carefully lift one edge and fold it over the 
-            fillings. Let it cook for another minute, then slide it onto a plate.</li>
+        <li>Cook the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</li>
+        <li>Add fillings (optional): When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</li>
+        <li>Fold and serve: As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</li>
         <li>Enjoy: Serve hot, with additional salt and pepper if needed.</li>
       </ol>
     </div>
 
     <div class="recipe-nutrition">
-      <h2>Nutrition</h2>
-      <p>The table below shows nutritional values per serving without the additional fillings.</p>
+      <h2 class="nutrition-title">Nutrition</h2>
+      <p class="nutrition-description">The table below shows nutritional values per serving without the additional fillings.</p>
       <table>
         <tr>
           <td>Calories</td>
@@ -96,21 +88,36 @@
 </html>
 
 <style>
+  body {
+    background-color: hsl(30, 54%, 90%); /* or any color you want */
+  }
+
   .container {
-    max-width: 800px;
+    background-color: white;
+    max-width: 750px;
     margin: auto;
     padding: 20px;
-    font-family: Derringer Serial;
-    line-height: 1.6;
+    line-height: 1.5;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    color: hsl(142, 7%, 30%);
+    border-radius: 20px; 
+  }
+
+  .recipe-image img {
+    display: block;
+    margin: 0 auto;   
+    max-width: 100%;  
+    border-radius: 10px; 
   }
 
   .recipe-image {
-    text-align: center;
+    margin: 1.25rem;
   }
 
   .recipe-header {
     max-width: 700px;
-    margin: auto;
+    margin: 1.2rem auto;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -118,26 +125,72 @@
   }
 
   .header-title {
-    font-size: 2em;
-    margin-bottom: -0.2em;
+    font-size: 2.75em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    color: hsl(0, 0%, 20%);
+    font-family: 'Young Serif', serif;
+    font-weight: 200;
   }
 
   .recipe-preparation {
+    margin: 1.25rem;
+    max-width: 700px;
+    margin-bottom: 20px;
+    background-color: hsl(30, 54%, 90%);
+    padding: 20px;
+    border-radius: 10px; 
+  }
+
+  .recipe-ingredients, .recipe-instructions, .recipe-nutrition {
     max-width: 700px;
     margin: auto;
     margin-bottom: 20px;
   }
 
-  .recipe-ingredients, .recipe-instructions {
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 20px;
+  .preparation-title {
+    font-size: 1.3em;
+    font-family: 'Lexend', sans-serif;
+    color: hsl(321, 76%, 28%);
   }
 
-  .recipe-nutrition {
+  .preparation-list, .ingredients-list, .instructions-list {
+    margin: 0;              
+    padding-left: 2em;      
+    color: hsl(142, 7%, 30%);
+  }
+
+  .preparation-list li,
+  .ingredients-list li,
+  .instructions-list li {
+    margin-bottom: 0.5em;   
+  }
+
+  .preparation-list li::marker {
+    color: hsl(321, 76%, 28%);
+    font-size: 0.75rem;
+  }
+
+
+  .ingredients-list li::marker {
+    color: hsl(29, 64%, 35%);
+    font-size: 0.75rem;
+    padding-right: 10px;
+  }
+
+  .instructions-list li::marker {
+    color: hsl(29, 64%, 35%);
+    padding-right: 10px;
+  }
+
+  .ingredients-title, .instructions-title, .nutrition-title {
     max-width: 700px;
     margin: auto;
     margin-bottom: 20px;
+    font-family: 'Young Serif', sans-serif;
+    font-weight: 200;
+    font-size: 1.75em;
+    color: hsl(29, 64%, 35%); 
   }
 
   .attribution { 
